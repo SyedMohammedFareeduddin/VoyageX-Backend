@@ -34,17 +34,17 @@ public class Trip extends BaseEntity {
     @Column(nullable = false, length = 1000)
     private String description;
 
-    @Column(nullable = false, precision = 10, scale = 2)
+    @Column(nullable = false, precision = 12, scale = 2)
     private BigDecimal budget;
 
-    @Column(nullable = false)
+    @Column(name = "trip_start_date", nullable = false)
     private LocalDateTime tripStartDate;
 
-    @Column(nullable = false)
+    @Column(name = "trip_end_date", nullable = false)
     private LocalDateTime tripEndDate;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Column(name = "trip_status", nullable = false, length = 20)
     private TripStatus tripStatus = TripStatus.PLANNED ;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
