@@ -1,6 +1,7 @@
 
 package com.VoyageX.trip.entity;
 
+import com.VoyageX.common.entity.BaseEntity;
 import com.VoyageX.trip.enums.TripMemberRole;
 import com.VoyageX.user.entity.User;
 import jakarta.persistence.*;
@@ -16,7 +17,7 @@ import java.time.LocalDateTime;
         name = "trip_members" ,
         uniqueConstraints = {
                 @UniqueConstraint(
-                        name = "uk_trip_members_trip_user_id_and_trip_id" ,
+                        name = "uk_trip_members_user_id_and_trip_id" ,
                         columnNames = { "trip_id" , "user_id" }
                 )
         }
@@ -25,7 +26,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class TripMember {
+public class TripMember extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

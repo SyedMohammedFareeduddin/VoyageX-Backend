@@ -1,6 +1,7 @@
 
 package com.VoyageX.invitation.entity;
 
+import com.VoyageX.common.entity.BaseEntity;
 import com.VoyageX.invitation.enums.InvitationStatus;
 import com.VoyageX.trip.entity.Trip;
 import com.VoyageX.trip.enums.TripMemberRole;
@@ -19,7 +20,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Invitation {
+public class Invitation extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

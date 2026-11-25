@@ -1,6 +1,7 @@
 
 package com.VoyageX.itinerary.entity;
 
+import com.VoyageX.common.entity.BaseEntity;
 import com.VoyageX.trip.entity.Trip;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -24,7 +25,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Itinerary {
+public class Itinerary extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,10 +35,10 @@ public class Itinerary {
     @JoinColumn(name = "trip_id", nullable = false)
     private Trip trip;
 
-    @Column(name = "itinerary_data", nullable = false)
+    @Column(name = "itinerary_date", nullable = false)
     private LocalDateTime itineraryDate;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 1000)
     private String notes;
 
 }
